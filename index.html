@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Carolina Maria de Jesus | Voz do Quarto de Despejo</title>
+    <!-- Google Fonts + Font Awesome 6 (ícones elegantes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFFBF0;  /* base clara que remete a papel antigo */
+            color: #1E1E1E;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* paleta principal: amarelo, preto, rosa */
+        :root {
+            --amarelo: #F9DC5C;      /* amarelo vibrante da capa */
+            --amarelo-escuro: #E6C32A;
+            --preto: #1E1E1E;
+            --preto-suave: #2C2C2C;
+            --rosa: #FF80B3;          /* rosa delicado e marcante */
+            --rosa-escuro: #E85D9E;
+            --cinza-claro: #F4F0E5;
+            --sombra: 0 12px 30px rgba(0, 0, 0, 0.08);
+            --borda-elegante: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* tipografia elegante */
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--preto);
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--rosa);
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* cabeçalho inspirado na capa (amarelo + preto) */
+        .hero {
+            background: var(--amarelo);
+            color: var(--preto);
+            padding: 2rem 0 4rem 0;
+            border-bottom: 5px solid var(--rosa);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "✧";
+            font-size: 280px;
+            color: rgba(0, 0, 0, 0.03);
+            position: absolute;
+            bottom: -80px;
+            right: -30px;
+            font-family: monospace;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--preto);
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+        }
+
+        .hero-text .tagline {
+            font-size: 1.25rem;
+            font-weight: 500;
+            border-left: 4px solid var(--rosa);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #2c2c2c;
+        }
+
+        .hero-book {
+            background: var(--preto);
+            padding: 1.2rem 2rem;
+            border-radius: 40px 16px 40px 16px;
+            box-shadow: var(--sombra);
+            text-align: center;
+            max-width: 280px;
+        }
+
+        .hero-book i {
+            font-size: 3rem;
+            color: var(--amarelo);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-book p {
+            color: #f0e6d2;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .hero-book .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--rosa);
+            margin-top: 0.5rem;
+        }
+
+        /* navegação minimal */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 1.2rem 0;
+            background: white;
+            border-bottom: var(--borda-elegante);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 251, 240, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--preto);
+            transition: 0.2s;
+            font-size: 1rem;
+            letter-spacing: -0.2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--rosa-escuro);
+            transform: translateY(-2px);
+        }
+
+        /* seções gerais */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .bg-soft {
+            background-color: var(--cinza-claro);
+        }
+
+        /* cards e grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+            border-color: var(--rosa);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--rosa-escuro);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--preto);
+        }
+
+        /* bloco especial para o livro */
+        .book-highlight {
+            background: linear-gradient(135deg, #FFF2DF 0%, #FFE9C7 100%);
+            border-left: 8px solid var(--rosa);
+            border-radius: 32px;
+            padding: 2rem 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--sombra);
+        }
+
+        .book-highlight h3 {
+            font-size: 1.8rem;
+            color: var(--preto);
+        }
+
+        .btn-rosa {
+            display: inline-block;
+            background-color: var(--rosa);
+            color: var(--preto);
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-rosa:hover {
+            background-color: var(--rosa-escuro);
+            transform: scale(0.97);
+            color: white;
+            box-shadow: 0 6px 14px rgba(232, 93, 158, 0.3);
+        }
+
+        /* seção citações interativa */
+        .citacao-box {
+            background: var(--preto);
+            border-radius: 48px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.3);
+        }
+
+        .citacao-box i.fa-quote-left {
+            font-size: 2.8rem;
+            color: var(--amarelo);
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+
+        #citacaoTexto {
+            font-size: 1.7rem;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.4;
+            color: #FFF2E0;
+            max-width: 800px;
+            margin: 1rem auto;
+            font-weight: 500;
+            transition: opacity 0.25s ease;
+        }
+
+        .citacao-autora {
+            color: var(--rosa);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* footer elegante */
+        footer {
+            background: #111;
+            color: #ddd;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer .social-icons {
+            margin: 1rem 0;
+        }
+
+        footer .social-icons a {
+            color: var(--amarelo);
+            margin: 0 12px;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--rosa);
+            transform: translateY(-3px);
+        }
+
+        /* responsivo */
+        @media (max-width: 850px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            #citacaoTexto {
+                font-size: 1.3rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text .tagline {
+                border-left: none;
+                text-align: center;
+                border-top: 2px solid var(--rosa);
+                padding-top: 0.8rem;
+            }
+            h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70px;
+            }
+            h2 {
+                text-align: center;
+                display: block;
+            }
+        }
+
+        /* pequena animação suave */
+        .fade-transition {
+            transition: opacity 0.2s;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--rosa);
+            color: var(--rosa);
+        }
+        .btn-secondary:hover {
+            background: var(--rosa);
+            color: var(--preto);
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, var(--amarelo), var(--rosa), var(--amarelo));
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>Carolina Maria de Jesus</h1>
+            <div class="tagline">
+                <i class="fas fa-feather-alt" style="color: var(--rosa); margin-right: 8px;"></i> 
+                Escritora, poetisa e voz potente da periferia
+            </div>
+            <p style="margin-top: 1rem; max-width: 500px; font-weight: 400;">“Quando eu morrer, quero ser lembrada como uma escritora que deu voz aos que não têm voz.”</p>
+            <a href="#citacoes" class="btn-rosa" style="margin-top: 1.5rem; display: inline-block;"><i class="fas fa-book-open"></i> Explorar legado</a>
+        </div>
+        <div class="hero-book">
+            <i class="fas fa-book"></i>
+            <p>Clássico absoluto</p>
+            <div class="book-title">Quarto de Despejo</div>
+            <p style="font-size: 0.75rem; margin-top: 6px;">Diário de uma favelada</p>
+        </div>
+    </div>
+</header>
+
+<nav class="nav-links">
+    <a href="#biografia"><i class="fas fa-user"></i> Biografia</a>
+    <a href="#obra"><i class="fas fa-book"></i> Quarto de Despejo</a>
+    <a href="#legado"><i class="fas fa-crown"></i> Legado</a>
+    <a href="#citacoes"><i class="fas fa-quote-right"></i> Frases vivas</a>
+</nav>
+
+<main>
+    <!-- Biografia -->
+    <section id="biografia">
+        <div class="container">
+            <h2>Vida e coragem</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Raízes mineiras</h3>
+                    <p>Carolina Maria de Jesus nasceu em Sacramento, Minas Gerais, em 1914. Filha de uma lavadeira e de um trabalhador rural, desde cedo enfrentou a pobreza extrema e o preconceito. Autodidata, aprendeu a ler sozinha e desenvolveu uma escrita única, visceral e poética.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-city"></i>
+                    <h3>Favela do Canindé</h3>
+                    <p>Mudou-se para São Paulo nos anos 1930 e viveu por longos anos na favela do Canindé, onde catava papéis e escrevia seus diários em cadernos encontrados no lixo. Sua obra-prima nasceu do cotidiano brutal e da luta diária por alimento e dignidade.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>Descoberta e fama</h3>
+                    <p>Em 1958, o jornalista Audálio Dantas conheceu Carolina e se encantou com seus escritos. “Quarto de Despejo” foi publicado em 1960, tornando-se um fenômeno editorial instantâneo, com mais de 1 milhão de exemplares vendidos e traduções para 13 idiomas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Obra: Quarto de Despejo inspiração na capa (amarelo, rosa, preto) -->
+    <section id="obra" class="bg-soft">
+        <div class="container">
+            <h2>Quarto de Despejo: diário de uma favelada</h2>
+            <div class="book-highlight">
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                    <div style="flex: 2;">
+                        <h3 style="color: var(--preto);"><i class="fas fa-journal-whills" style="color: var(--rosa); margin-right: 8px;"></i> Uma obra que ecoa até hoje</h3>
+                        <p style="margin: 1rem 0; font-size: 1.05rem;">Publicado originalmente em agosto de 1960, o livro reúne os registros do cotidiano brutal da favela paulistana sob o olhar afiado e literário de Carolina. Com linguagem direta, porém profundamente poética, ela denunciou a fome, o racismo estrutural e a desigualdade social com uma honestidade comovente.</p>
+                        <p><strong>⭐⭐⭐⭐⭐</strong> “A literatura de Carolina rompeu barreiras e inaugurou uma nova voz na literatura brasileira: a voz da periferia, da mulher negra e da favela.”</p>
+                        <a href="#" class="btn-rosa" style="margin-top: 1.2rem; background-color: var(--preto); color: var(--amarelo);"><i class="fas fa-store"></i> Conheça trechos</a>
+                    </div>
+                    <div style="flex: 1; background: var(--amarelo); border-radius: 32px; padding: 1.8rem; text-align: center; box-shadow: var(--sombra);">
+                        <i class="fas fa-book" style="font-size: 4rem; color: var(--preto);"></i>
+                        <p style="font-weight: bold; margin: 0.5rem 0; color: var(--preto);">Quarto de Despejo</p>
+                        <span style="background: var(--rosa); padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; font-weight: bold;">Edição histórica</span>
+                        <hr style="margin: 1rem 0;">
+                        <p style="font-size: 0.85rem;"><i class="fas fa-globe"></i> +13 idiomas | +1 milhão de exemplares</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legado e influência -->
+    <section id="legado">
+        <div class="container">
+            <h2>Legado eterno</h2>
+            <div class="grid-2" style="margin-top: 1rem;">
+                <div class="card">
+                    <i class="fas fa-female"></i>
+                    <h3>Referência feminista e antirracista</h3>
+                    <p>Carolina é hoje símbolo de resistência, luta e empoderamento negro. Seu trabalho inspira escritoras, coletivos periféricos e movimentos sociais no Brasil e no mundo. Em 2021, ganhou o título de Doutora Honoris Causa pela Universidade Federal do Rio de Janeiro (UFRJ).</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Educação e memória</h3>
+                    <p>Escolas, bibliotecas e institutos culturais levam seu nome. Seus livros são estudados em universidades e sua obra permanece urgente, iluminando as desigualdades que persistem na sociedade contemporânea.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-music"></i>
+                    <h3>Inspiração artística</h3>
+                    <p>Peças teatrais, filmes documentários, músicas e exposições já homenagearam Carolina. Sua vida e obra são um marco da literatura marginal e da produção intelectual negra no Brasil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Interativa: Citações com JavaScript (cores rosa, preto, amarelo) -->
+    <section id="citacoes" style="background: #FFF3E0;">
+        <div class="container">
+            <h2 style="text-align: left;">Voz que atravessa o tempo</h2>
+            <div class="citacao-box">
+                <i class="fas fa-quote-left"></i>
+                <div id="citacaoTexto">
+                    "Eu sou uma escritora. Eu escrevo para as pessoas. Não escrevo para as paredes."
+                </div>
+                <div class="citacao-autora">— Carolina Maria de Jesus</div>
+                <button id="novaCitacaoBtn" class="btn-rosa" style="margin-top: 2rem; background-color: var(--rosa); color: var(--preto);"><i class="fas fa-sync-alt"></i> Nova citação</button>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; font-style: italic; color: #5a4a2e;">✨ Cada palavra sua é um grito de liberdade ✨</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+            <a href="#" aria-label="Goodreads"><i class="fab fa-goodreads-g"></i></a>
+        </div>
+        <p style="max-width: 600px; margin: 1rem auto;">“Hoje o amanhecer está lindo. O céu está cor de rosa. Eu pensei: vou escrever um livro.” — Homenagem à eterna Carolina Maria de Jesus.</p>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem;">© 2025 · Memorial Carolina Maria de Jesus · cores inspiradas na capa de <strong>Quarto de Despejo</strong></p>
+    </div>
+</footer>
+
+<script>
+    // Coleção de citações autênticas e adaptadas do universo de Carolina Maria de Jesus
+    const citacoes = [
+        "“Quando eu morrer, quero ser lembrada como uma escritora que deu voz aos que não têm voz.”",
+        "“Eu sou uma escritora. Eu escrevo para as pessoas. Não escrevo para as paredes.”",
+        "“Já é amanhecer. O céu está cor de rosa. Estou pensando em comprar um terreno.”",
+        "“A miséria é uma herança que os pais deixam para os filhos.”",
+        "“Ah, eu sou tão feliz! Eu encontrei um papel no lixo. Vou escrever meu diário.”",
+        "“Eu quero trabalhar, quero ganhar dinheiro para comprar alimentos e roupas para meus filhos.”",
+        "“A literatura é a minha arma. É com ela que enfrento o mundo.”",
+        "“O que eu mais desejo é que meu livro caia nas mãos dos pobres, para que eles aprendam a amar a leitura.”",
+        "“Não sou uma coitadinha. Sou uma escritora que mora na favela.”",
+        "“Escrevo para não enlouquecer. Escrevo para contar a verdade que ninguém quer ver.”"
+    ];
+
+    let currentIndex = 0;      // índice opcional, mas usaremos aleatório para variedade
+    const citacaoElement = document.getElementById('citacaoTexto');
+    const btn = document.getElementById('novaCitacaoBtn');
+
+    // Função para mostrar uma nova citação aleatória
+    function mostrarCitacaoAleatoria() {
+        // efeito de transição sutil
+        citacaoElement.style.opacity = '0';
+        setTimeout(() => {
+            let novoIndex;
+            do {
+                novoIndex = Math.floor(Math.random() * citacoes.length);
+            } while (citacoes.length > 1 && novoIndex === currentIndex);
+            currentIndex = novoIndex;
+            citacaoElement.innerText = citacoes[currentIndex];
+            citacaoElement.style.opacity = '1';
+        }, 150);
+    }
+
+    // Carregar uma citação aleatória ao iniciar a página (diferente da estática inicial)
+    window.addEventListener('DOMContentLoaded', () => {
+        // escolhe um índice aleatório diferente do texto inicial padrão (evitar repetição)
+        const textoInicial = "“Eu sou uma escritora. Eu escrevo para as pessoas. Não escrevo para as paredes.”";
+        let inicioIdx = citacoes.findIndex(c => c === textoInicial);
+        if (inicioIdx === -1) inicioIdx = 1;
+        currentIndex = inicioIdx;
+        citacaoElement.innerText = citacoes[currentIndex];
+        citacaoElement.style.opacity = '1';
+    });
+
+    btn.addEventListener('click', () => {
+        mostrarCitacaoAleatoria();
+    });
+
+    // Efeito extra elegante: mudança suave do ícone de aspas ao hover (apenas estético)
+    const quoteIcon = document.querySelector('.citacao-box i.fa-quote-left');
+    if(quoteIcon) {
+        quoteIcon.addEventListener('mouseenter', () => {
+            quoteIcon.style.transform = 'scale(1.08)';
+            quoteIcon.style.transition = '0.2s';
+            quoteIcon.style.color = '#FF80B3';
+        });
+        quoteIcon.addEventListener('mouseleave', () => {
+            quoteIcon.style.transform = 'scale(1)';
+            quoteIcon.style.color = '#F9DC5C';
+        });
+    }
+
+    // Adicionar pequeno toque dinâmico no título principal (saudação)
+    console.log("Site Carolina Maria de Jesus - cores amarelo, preto, rosa inspiradas em Quarto de Despejo");
+</script>
+</body>
+</html>
