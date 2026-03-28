@@ -58,6 +58,15 @@
         }
 
         /* cabeçalho inspirado na capa (amarelo + preto) */
+        .carol {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #E85D9E;
+            background-color: #ddd;
+        }
         .hero {
             background: var(--amarelo);
             color: var(--preto);
