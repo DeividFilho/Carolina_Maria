@@ -1,0 +1,374 @@
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFFBF0;  /* base clara que remete a papel antigo */
+            color: #1E1E1E;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* paleta principal: amarelo, preto, rosa */
+        :root {
+            --amarelo: #F9DC5C;      /* amarelo vibrante da capa */
+            --amarelo-escuro: #E6C32A;
+            --preto: #1E1E1E;
+            --preto-suave: #2C2C2C;
+            --rosa: #FF80B3;          /* rosa delicado e marcante */
+            --rosa-escuro: #E85D9E;
+            --cinza-claro: #F4F0E5;
+            --sombra: 0 12px 30px rgba(0, 0, 0, 0.08);
+            --borda-elegante: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* tipografia elegante */
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--preto);
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--rosa);
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* cabeçalho inspirado na capa (amarelo + preto) */
+        .hero {
+            background: var(--amarelo);
+            color: var(--preto);
+            padding: 2rem 0 4rem 0;
+            border-bottom: 5px solid var(--rosa);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "✧";
+            font-size: 280px;
+            color: rgba(0, 0, 0, 0.03);
+            position: absolute;
+            bottom: -80px;
+            right: -30px;
+            font-family: monospace;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--preto);
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+        }
+
+        .hero-text .tagline {
+            font-size: 1.25rem;
+            font-weight: 500;
+            border-left: 4px solid var(--rosa);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #2c2c2c;
+        }
+
+        .hero-book {
+            background: var(--preto);
+            padding: 1.2rem 2rem;
+            border-radius: 40px 16px 40px 16px;
+            box-shadow: var(--sombra);
+            text-align: center;
+            max-width: 280px;
+        }
+
+        .hero-book i {
+            font-size: 3rem;
+            color: var(--amarelo);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-book p {
+            color: #f0e6d2;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .hero-book .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--rosa);
+            margin-top: 0.5rem;
+        }
+
+        /* navegação minimal */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 1.2rem 0;
+            background: white;
+            border-bottom: var(--borda-elegante);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 251, 240, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--preto);
+            transition: 0.2s;
+            font-size: 1rem;
+            letter-spacing: -0.2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--rosa-escuro);
+            transform: translateY(-2px);
+        }
+
+        /* seções gerais */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .bg-soft {
+            background-color: var(--cinza-claro);
+        }
+
+        /* cards e grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+            border-color: var(--rosa);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--rosa-escuro);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--preto);
+        }
+
+        /* bloco especial para o livro */
+        .book-highlight {
+            background: linear-gradient(135deg, #FFF2DF 0%, #FFE9C7 100%);
+            border-left: 8px solid var(--rosa);
+            border-radius: 32px;
+            padding: 2rem 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--sombra);
+        }
+
+        .book-highlight h3 {
+            font-size: 1.8rem;
+            color: var(--preto);
+        }
+
+        .btn-rosa {
+            display: inline-block;
+            background-color: var(--rosa);
+            color: var(--preto);
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-rosa:hover {
+            background-color: var(--rosa-escuro);
+            transform: scale(0.97);
+            color: white;
+            box-shadow: 0 6px 14px rgba(232, 93, 158, 0.3);
+        }
+
+        /* seção citações interativa */
+        .citacao-box {
+            background: var(--preto);
+            border-radius: 48px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.3);
+        }
+
+        .citacao-box i.fa-quote-left {
+            font-size: 2.8rem;
+            color: var(--amarelo);
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+
+        #citacaoTexto {
+            font-size: 1.7rem;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.4;
+            color: #FFF2E0;
+            max-width: 800px;
+            margin: 1rem auto;
+            font-weight: 500;
+            transition: opacity 0.25s ease;
+        }
+
+        .citacao-autora {
+            color: var(--rosa);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* footer elegante */
+        footer {
+            background: #111;
+            color: #ddd;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer .social-icons {
+            margin: 1rem 0;
+        }
+
+        footer .social-icons a {
+            color: var(--amarelo);
+            margin: 0 12px;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--rosa);
+            transform: translateY(-3px);
+        }
+
+        /* responsivo */
+        @media (max-width: 850px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            #citacaoTexto {
+                font-size: 1.3rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text .tagline {
+                border-left: none;
+                text-align: center;
+                border-top: 2px solid var(--rosa);
+                padding-top: 0.8rem;
+            }
+            h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70px;
+            }
+            h2 {
+                text-align: center;
+                display: block;
+            }
+        }
+
+        /* pequena animação suave */
+        .fade-transition {
+            transition: opacity 0.2s;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--rosa);
+            color: var(--rosa);
+        }
+        .btn-secondary:hover {
+            background: var(--rosa);
+            color: var(--preto);
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, var(--amarelo), var(--rosa), var(--amarelo));
+            margin: 1rem 0;
+        }
