@@ -2,8 +2,7 @@
 
 Site institucional e memorial em homenagem à escritora Carolina Maria de Jesus, desenvolvido com **HTML, CSS e JavaScript puro**. O design é inspirado nas cores marcantes da capa do livro **"Quarto de Despejo"** – **amarelo, preto e rosa** –, criando uma experiência visual elegante e emotiva.
 
-![Preview do Site](https://via.placeholder.com/800x400?text=Carolina+Maria+de+Jesus+Site)  
-*Substitua pela imagem real do projeto se desejar*
+![Preview do Site]([https://via.placeholder.com/800x400?text=Carolina+Maria+de+Jesus+Site](https://deividfilho.github.io/Carolina_Maria/))  
 
 ## 🎨 Paleta de Cores & Inspiração
 
